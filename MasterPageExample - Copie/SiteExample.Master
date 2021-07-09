@@ -1,0 +1,91 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="SiteExample.master.cs" Inherits="MasterPageExample.SiteExample" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>gestion de site </title>
+    
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style1 {
+            width: 100%;
+            height: 416px;
+            margin-bottom: 0px;
+        }
+        .auto-style2 {
+            width: 890px;
+            height: 10px;
+        }
+        .auto-style3 {
+            background-color: #FF9933;
+            height: 10px;
+        }
+        .auto-style4 {
+            height: 258px;
+            background-color: #FF9933;
+        }
+        .auto-style5 {
+            width: 890px;
+            height: 258px;
+            background-color: #FFFFCC;
+        }
+        .auto-style6 {
+            height: 37px;
+            background-color: #FF9933;
+        }
+        .auto-style7 {
+            width: 890px;
+            height: 37px;
+            background-color: #FFFFCC;
+        }
+        .auto-style8 {
+            margin-top: 0px;
+            font-size: xx-large;
+            color: #FFFF00;
+            text-decoration: underline;
+            margin-bottom: 0px;
+        }
+        </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <table class="auto-style1">
+            <tr>
+                <td class="auto-style6"></td>
+                <td class="auto-style7">
+                    <asp:SiteMapPath ID="SiteMapPath1" runat="server" Font-Names="Verdana" Font-Size="0.8em" PathSeparator=" : ">
+                        <CurrentNodeStyle ForeColor="#333333" />
+                        <NodeStyle Font-Bold="True" ForeColor="#990000" />
+                        <PathSeparatorStyle Font-Bold="True" ForeColor="#990000" />
+                        <RootNodeStyle Font-Bold="True" ForeColor="#FF8000" />
+                    </asp:SiteMapPath>
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style4">
+                    <em>
+                    <asp:TreeView ID="TreeView1" runat="server" DataSourceID="SiteMapDataSource1" CssClass="auto-style8" Height="16px" Width="244px" ImageSet="News" NodeIndent="10" OnSelectedNodeChanged="TreeView1_SelectedNodeChanged1">
+                        <HoverNodeStyle Font-Underline="True" />
+                        <NodeStyle Font-Names="Arial" Font-Size="10pt" ForeColor="Black" HorizontalPadding="5px" NodeSpacing="0px" VerticalPadding="0px" />
+                        <ParentNodeStyle Font-Bold="False" />
+                        <SelectedNodeStyle Font-Underline="True" HorizontalPadding="0px" VerticalPadding="0px" />
+                    </asp:TreeView>
+                    </em>
+                    <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" />
+                </td>
+                <td class="auto-style5">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style3"></td>
+                <td class="auto-style2">Gestion Commerciale</td>
+            </tr>
+        </table>
+    </form>
+   </body>
+</html>
